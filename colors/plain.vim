@@ -20,7 +20,7 @@ endif
 
 let g:colors_name='plain'
 
-let s:black           = { "gui": "#121212", "cterm": "0"   }
+let s:black           = { "gui": "#101010", "cterm": "0"   }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
 let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
 let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
@@ -58,7 +58,7 @@ if &background == "dark"
   let s:red             = s:light_red
   let s:yellow          = s:light_yellow
   let s:visual          = s:lighter_black
-  let s:cursor_line     = s:light_black
+  let s:cursor_line     = s:subtle_black
   let s:status_line     = s:light_black
   let s:constant        = s:light_blue
   let s:comment         = s:light_gray
@@ -103,13 +103,15 @@ hi! link Number           Constant
 hi! link Boolean          Constant
 hi! link Float            Constant
 hi! link String           Constant
+" call s:h("String",      {"bg": s:bg, "fg": s:white})
+" hi! link String           String
 
 "call s:h("Identifier",    {"fg": s:dark_blue})
 hi! link Identifier       Normal
 hi! link Function         Identifier
 
 "hi! link Statement        Normal
-call s:h("Statement",     {"bg": s:bg, "fg": s:norm, "gui": "bold"})
+call s:h("Statement",     {"bg": s:bg, "fg": s:actual_white, "gui": "bold"})
 hi! link Conditonal       Statement
 hi! link Repeat           Statement
 hi! link Label            Statement
@@ -124,7 +126,7 @@ hi! link Define           PreProc
 hi! link Macro            PreProc
 hi! link PreCondit        PreProc
 
-"call s:h("Type",          {"fg": s:purple})
+" call s:h("Type",          {"bg": s:bg, "fg": s:white})
 hi! link Type             Normal
 hi! link StorageClass     Type
 hi! link Structure        Type
@@ -146,8 +148,8 @@ call s:h("SpecialKey",    {"fg": s:light_green})
 call s:h("NonText",       {"fg": s:medium_gray})
 call s:h("Directory",     {"fg": s:dark_blue})
 call s:h("ErrorMsg",      {"fg": s:pink})
-call s:h("IncSearch",     {"bg": s:yellow, "fg": s:light_black})
-call s:h("Search",        {"bg": s:yellow, "fg": s:light_black})
+call s:h("IncSearch",     {"bg": s:cyan, "fg": s:bg})
+call s:h("Search",        {"bg": s:cyan, "fg": s:bg})
 call s:h("MoreMsg",       {"fg": s:medium_gray, "cterm": "bold", "gui": "bold"})
 hi! link ModeMsg MoreMsg
 call s:h("LineNr",        {"fg": s:bg_subtle})
@@ -241,3 +243,7 @@ hi link markdownListMarker Statement
 hi link markdownCode Statement
 hi link markdownCodeDelimiter Statement
 hi link markdownHeadingDelimiter Statement
+
+hi link scVar Statement
+hi link scArg Statement
+hi link scObject Statement
