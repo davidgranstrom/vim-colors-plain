@@ -168,8 +168,9 @@ call s:h("DiffDelete",    {"fg": s:red})
 call s:h("DiffChange",    {"fg": s:dark_yellow})
 call s:h("DiffText",      {"fg": s:dark_blue})
 call s:h("SignColumn",    {"fg": s:light_green})
+call s:h("Substitue",     {"fg": s:purple})
 
-if has("gui_running")
+if has("gui_running" || has('nvim'))
   call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
   call s:h("SpellCap",    {"gui": "underline", "sp": s:light_green})
   call s:h("SpellRare",   {"gui": "underline", "sp": s:pink})
@@ -181,11 +182,11 @@ else
   call s:h("SpellLocal",  {"cterm": "underline", "fg": s:dark_green})
 endif
 
-call s:h("StatusLine",        {"gui": "underline", "bg": s:bg, "fg": s:light_gray})
-call s:h("StatusLineOk",      {"gui": "underline", "bg": s:bg, "fg": s:green})
-call s:h("StatusLineError",   {"gui": "underline", "bg": s:bg, "fg": s:pink})
-call s:h("StatusLineWarning", {"gui": "underline", "bg": s:bg, "fg": s:dark_yellow})
-call s:h("StatusLineNC",      {"gui": "underline", "bg": s:bg, "fg": s:light_black})
+" call s:h("StatusLine",        {"gui": "underline", "bg": s:bg, "fg": s:light_gray})
+" call s:h("StatusLineOk",      {"gui": "underline", "bg": s:bg, "fg": s:green})
+" call s:h("StatusLineError",   {"gui": "underline", "bg": s:bg, "fg": s:pink})
+" call s:h("StatusLineWarning", {"gui": "underline", "bg": s:bg, "fg": s:dark_yellow})
+" call s:h("StatusLineNC",      {"gui": "underline", "bg": s:bg, "fg": s:light_black})
 
 call s:h("Pmenu",         {"fg": s:norm, "bg": s:cursor_line})
 call s:h("PmenuSel",      {"fg": s:norm, "bg": s:blue})
