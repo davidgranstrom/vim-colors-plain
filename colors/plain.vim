@@ -249,5 +249,20 @@ hi link markdownHeadingDelimiter Statement
 hi link scVar Statement
 hi link scArg Statement
 hi link scObject Statement
+
 " Show trailing whitespace:
 match TrailingWhiteSpace /\s\+$/
+
+" terminal
+function! s:SetTermColor(index, color)
+  execute "let g:terminal_color_" . a:index . " = " '"'. a:color.'"'
+endfunction
+
+" set normal 0-7 and bright 8-15
+" terminal 16 color palette
+for i in range(0, 7)
+  " normal
+  call s:SetTermColor(i, "#b2b2b2")
+  " bright
+  call s:SetTermColor(i + 8, "#ffffff")
+endfor
