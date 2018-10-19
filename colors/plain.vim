@@ -169,6 +169,7 @@ call s:h("DiffChange",    {"fg": s:dark_yellow})
 call s:h("DiffText",      {"fg": s:dark_blue})
 call s:h("SignColumn",    {"fg": s:light_green})
 call s:h("Substitue",     {"fg": s:purple})
+call s:h("TrailingWhiteSpace", {"fg": s:red, "bg": s:bg, "gui": "underline", "cterm": "underline"})
 
 if has("gui_running" || has('nvim'))
   call s:h("SpellBad",    {"gui": "underline", "sp": s:red})
@@ -248,3 +249,5 @@ hi link markdownHeadingDelimiter Statement
 hi link scVar Statement
 hi link scArg Statement
 hi link scObject Statement
+" Show trailing whitespace:
+match TrailingWhiteSpace /\s\+$/
