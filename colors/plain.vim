@@ -21,6 +21,7 @@ endif
 let g:colors_name='plain'
 
 let s:black           = { "gui": "#101010", "cterm": "0"   }
+" let s:black           = { "gui": "#000000", "cterm": "0"   }
 let s:medium_gray     = { "gui": "#767676", "cterm": "243" }
 let s:white           = { "gui": "#F1F1F1", "cterm": "15"  }
 let s:actual_white    = { "gui": "#FFFFFF", "cterm": "231" }
@@ -246,6 +247,21 @@ hi link markdownCode Statement
 hi link markdownCodeDelimiter Statement
 hi link markdownHeadingDelimiter Statement
 
+" c
+hi link cPreCondit Comment
+hi link cDefine Comment
+hi link cStructure Statement
+hi link cType Statement
+hi link cAnsiFunction Statement
+hi link cCustomFunc Statement
+
+hi link doxygenComment Comment
+hi link doxygenStart Comment
+hi link doxygenContinueComment Comment
+hi link doxygenSpecial Comment
+hi link doxygenParam Comment
+
+" supercollider
 hi link scVar Statement
 hi link scArg Statement
 hi link scObject Statement
@@ -254,15 +270,36 @@ hi link scObject Statement
 match TrailingWhiteSpace /\s\+$/
 
 " terminal
-function! s:SetTermColor(index, color)
-  execute "let g:terminal_color_" . a:index . " = " '"'. a:color.'"'
-endfunction
+" molokai scheme
 
-" set normal 0-7 and bright 8-15
-" terminal 16 color palette
-for i in range(0, 7)
-  " normal
-  call s:SetTermColor(i, "#b2b2b2")
-  " bright
-  call s:SetTermColor(i + 8, "#ffffff")
-endfor
+" black
+let g:terminal_color_0 = '#161616'
+let g:terminal_color_8 = '#676767'
+
+" white
+let g:terminal_color_7 = '#c7c7c7'
+let g:terminal_color_15 = '#feffff'
+
+" red
+let g:terminal_color_1 = '#fd4285'
+let g:terminal_color_9 = '#fa7fac'
+
+" green
+let g:terminal_color_2 = '#a6e22d'
+let g:terminal_color_10 = '#bde271'
+
+" yellow
+let g:terminal_color_3 = '#e5da72'
+let g:terminal_color_11 = '#fff27f'
+
+" blue
+let g:terminal_color_4 = '#0094d8'
+let g:terminal_color_12 = '#00bdff'
+
+" magenta
+let g:terminal_color_5 = '#9a37ff'
+let g:terminal_color_13 = '#bd9eff'
+
+" cyan
+let g:terminal_color_6 = '#50b6d8'
+let g:terminal_color_14 = '#5ed6fe'
