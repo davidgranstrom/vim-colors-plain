@@ -260,6 +260,11 @@ hi link doxygenStart Comment
 hi link doxygenContinueComment Comment
 hi link doxygenSpecial Comment
 hi link doxygenParam Comment
+hi link doxygenBrief Comment
+hi link doxygenBOther Comment
+hi link doxygenSpecialMultilineDesc Comment
+hi link doxygenSpecialOnelineDesc Comment
+hi link doxygenSpecialTypeOnelineDesc Comment
 
 " supercollider
 hi link scVar Statement
